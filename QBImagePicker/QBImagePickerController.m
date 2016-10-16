@@ -74,6 +74,10 @@
     [self addChildViewController:navigationController];
     
     navigationController.view.frame = self.view.bounds;
+    navigationController.navigationBar.translucent = NO;
+    navigationController.navigationBar.barTintColor = [UIColor colorWithRed:1.0f/255.0f green:193.0f/255.0f blue:92.0f/255.0f alpha:1.0f];
+    navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    navigationController.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName, nil];
     [self.view addSubview:navigationController.view];
     
     [navigationController didMoveToParentViewController:self];
