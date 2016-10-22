@@ -245,8 +245,7 @@
     __block NSUInteger numberOfAssets = 0;
     __block NSUInteger numberOfPhotos = 0;
     __block NSUInteger numberOfVideos = 0;
-    
-    [self.assetsGroup enumerateAssetsUsingBlock:^(ALAsset *result, NSUInteger index, BOOL *stop) {
+    [self.assetsGroup enumerateAssetsWithOptions:NSEnumerationReverse usingBlock:^(ALAsset *result, NSUInteger index, BOOL *stop) {
         if (result) {
             numberOfAssets++;
             
@@ -256,8 +255,8 @@
             
             [assets addObject:result];
         }
+
     }];
-    
     self.assets = assets;
     self.numberOfAssets = numberOfAssets;
     self.numberOfPhotos = numberOfPhotos;
